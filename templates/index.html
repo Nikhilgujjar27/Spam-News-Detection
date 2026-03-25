@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detection System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="status-message">
+    {{ message }}
+</div>
+    <div class="container">
+        <header>
+            <h1>📰 Spam News Detector</h1>
+            <p>Detect whether news is real or fake using AI</p>
+        </header>
+
+        <div class="main-content">
+            <div class="input-section">
+                <h2>Enter News Content</h2>
+                <form id="newsForm">
+                    <textarea id="newsContent" name="news_content" placeholder="Paste news content here..." required></textarea>
+                    <button type="submit" id="analyzeBtn">Analyze News</button>
+                </form>
+            </div>
+
+            <div class="result-section" id="resultSection" style="display: none;">
+                <h2>Analysis Result</h2>
+                <div class="result-card">
+                    <div id="resultIcon"></div>
+                    <h3 id="predictionText"></h3>
+                    <p>Confidence: <span id="confidenceValue"></span>%</p>
+                    <div class="processed-text">
+                        <h4>Processed Text:</h4>
+                        <p id="processedText"></p>
+                    </div>
+                </div>
+                <button id="analyzeAnotherBtn">Analyze Another News</button>
+            </div>
+
+            <div class="loading" id="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Analyzing content...</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>Built with Machine Learning | Accuracy: ~98%</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
