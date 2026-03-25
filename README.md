@@ -127,7 +127,3 @@ http://127.0.0.1:5000/
 Contributions are welcome. Please fork the repository and submit a pull request.
 
 ---
-
-## License
-
-This project is open-source and available under the MIT License.
